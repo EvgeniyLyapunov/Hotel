@@ -1,0 +1,94 @@
+﻿ <UserControl x:Class="Hotel.Views.UserControls.CheckUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hotel.Views.UserControls"
+             MinHeight="300" MinWidth="250" MaxHeight="300" MaxWidth="250" Background="White" FontFamily="Comic Sans MS">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Документ об оплате"
+                   FontSize="16"
+                   FontFamily="Comic Sans MS"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"
+                   Foreground="#fc9f1d"
+                   TextWrapping="Wrap"/>
+        <StackPanel Grid.Row="1" 
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    Margin="20 0 0 0">
+            <TextBlock Text="Дата:" Margin="0 0 20 0"/>
+            <TextBlock/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" 
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    Margin="20 0 0 0">
+            <TextBlock Text="Город:" Margin="0 0 20 0"/>
+            <TextBlock/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" 
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    Margin="20 0 0 0">
+            <TextBlock Text="Отель:" Margin="0 0 20 0"/>
+            <TextBlock/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" 
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    Margin="20 0 0 0">
+            <TextBlock Text="Номер:" Margin="0 0 20 0"/>
+            <TextBlock/>
+        </StackPanel>
+        <StackPanel Grid.Row="5" 
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    Margin="20 0 0 0">
+            <TextBlock Text="Проживающих:" Margin="0 0 20 0"/>
+            <TextBlock/>
+        </StackPanel>
+        <StackPanel Grid.Row="6" 
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    Margin="20 0 0 0">
+            <TextBlock Text="Кол-во ночей:" Margin="0 0 20 0"/>
+            <TextBlock/>
+        </StackPanel>
+        <StackPanel 
+                    Grid.Row="7" 
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    Margin="20 0 0 0">
+            <TextBlock Text="К оплате:" Margin="0 0 20 0"/>
+            <TextBlock/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="8" 
+                    Orientation="Horizontal">
+            <Button Content="Закрыть"
+                    Width="90" Height="25"
+                    FontSize="12"
+                    Margin="10 0 20 0"
+                    Background="#79d8eb"
+                    Foreground="#fff"/>
+            <Image  
+               Source="/StaticFiles/oplacheno.png"
+               Height="45"
+               HorizontalAlignment="Right"
+               Margin="0 0 20 0"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

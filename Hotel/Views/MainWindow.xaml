@@ -1,0 +1,103 @@
+﻿<Window x:Class="Hotel.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hotel"
+        xmlns:vm="clr-namespace:Hotel.ViewModels"
+        xmlns:usercontrol="clr-namespace:Hotel.Views.UserControls"
+        Title="Hotel" Icon="/StaticFiles/icon.ico" Width="800" Height="450"  MinWidth="800" MinHeight="450" WindowStartupLocation="CenterScreen" FontFamily="Comic Sans MS" >
+
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+
+    <Grid MaxWidth="800" MaxHeight="450">
+        <Border BorderBrush="#999" BorderThickness="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="12*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="6*"/>
+                </Grid.ColumnDefinitions>
+
+                <Menu Grid.Row="0" Grid.Column="0"
+                      Padding="10 0 0 0"
+                      VerticalAlignment="Center"
+                      FontSize="16"
+                      Background="Transparent" FontFamily="Comic Sans MS">
+                    <MenuItem Header="Выбор Отеля" />
+
+                    <MenuItem Header="Заказ номера"/>
+
+                    <MenuItem Header="Распечатать чек"/>
+
+                </Menu>
+                <Menu Grid.Row="0" Grid.Column="1"
+                      Padding="10 0 0 0"
+                      Margin="0 0 20 0"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Right"
+                      FontSize="16"
+                      Background="Transparent" FontFamily="Comic Sans MS">
+                    <MenuItem Header="Авторизация"
+                              Command="{Binding LoginVM.LoginViewVisibleCommand}"/>
+                </Menu>
+
+                <!--Главная картинка-->
+                <Image x:Name="TitleImg" Source="/StaticFiles/picture.png"
+                       Grid.Row="1" Grid.Column="0"
+                       Visibility="{Binding IsMainPictureVisible}"/>
+
+                <!--Титульное название программы-->
+                <Grid Grid.Row="1" Grid.Column="1" Visibility="{Binding IsMainTitleVisible}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="1"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="24"
+                       Foreground="#fc9f1d">
+                Wpf Client
+                    </TextBlock>
+                    <TextBlock Grid.Row="2"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="24"
+                       Foreground="#fc9f1d">
+                of project
+                    </TextBlock>
+                    <TextBlock Grid.Row="3"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="36" FontWeight="Bold"
+                       Foreground="#fc9f1d">
+                "Hotel"
+                    </TextBlock>
+
+                </Grid>
+
+                <!--View авторизации (входа)-->
+                <usercontrol:LoginUserControl Grid.Row="1" Grid.Column="1"
+                                              Visibility="{Binding LoginVM.IsLoginViewVisible}"/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Text="Ваш заказ успешно оплачен. Для получения чека - пункт меню Распечатать чек"
+                           FontSize="18" FontWeight="Bold" Foreground="#79d8eb"/>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
