@@ -12,12 +12,15 @@ namespace Hotel.Services
     {
         public DataBaseContext() : base("DbConnection") { }
 
+        static DataBaseContext()
+        {
+            Database.SetInitializer<DataBaseContext>(new DataBaseInitializer());
+        }
+
         public DbSet<User> Users { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Hotels> Hotels { get; set; }
         public DbSet<City> Citys { get; set; }
         public DbSet<Check> Checks { get; set; }
-
-
     }
 }

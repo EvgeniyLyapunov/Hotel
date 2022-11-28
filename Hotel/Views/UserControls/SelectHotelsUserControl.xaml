@@ -12,7 +12,6 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -26,50 +25,54 @@
                    VerticalAlignment="Center"
                    FontSize="24"
                    Foreground="#fc9f1d"/>
-        <Button Grid.Row="0" Grid.Column="2"
-                Width="70"
-                Height="25">Бронь</Button>
+            <Button Grid.Row="0" Grid.Column="2"
+                    Width="60"
+                    Height="25"
+                    Command="{Binding SelectHotelsVM.CloseSelectViewCommand}">
+                Отмена
+            </Button>
         <StackPanel Grid.Row="1" Grid.Column="0"
-                    VerticalAlignment="Bottom">
+                    VerticalAlignment="Center">
             <TextBlock Text="Город:"
                        Padding="15 0 0 5"/>
-            <ComboBox Width="130"/>
+            <ComboBox Name="CitysSelectComboBox"
+                      SelectedItem="{Binding SelectHotelsVM.CitysComboBoxSelectedItem, Mode=TwoWay}"
+                      Width="130"
+                      ItemsSource="{Binding SelectHotelsVM.CitysComboBox}"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1"
-                    VerticalAlignment="Bottom">
+                    VerticalAlignment="Center">
             <TextBlock Text="Отели:"
                        Padding="15 0 0 5"/>
-            <ComboBox Width="130"/>
+            <ComboBox Name="HotelsSelectComboBox"
+                      SelectedItem="{Binding SelectHotelsVM.HotelsComboBoxSelectedItem, Mode=TwoWay}"
+                      Width="130"
+                      ItemsSource="{Binding SelectHotelsVM.HotelsComboBox}"/>
         </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="2"
-                    VerticalAlignment="Bottom">
+                    VerticalAlignment="Center">
             <TextBlock Text="Номера:"
                        Padding="15 0 0 5"/>
-            <ComboBox Width="130"/>
+            <ComboBox Name="RoomsSelectComboBox"
+                      SelectedItem="{Binding SelectHotelsVM.RoomsComboBoxSelectedItem, Mode=TwoWay}"
+                      Width="130"
+                      ItemsSource="{Binding SelectHotelsVM.RoomsComboBox}"/>
         </StackPanel>
+        
         <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3"
                     Orientation="Horizontal"
                     VerticalAlignment="Center"
                     >
-            <TextBlock Text=""/>
-            <TextBlock Text=""/>
-            <TextBlock Text=""/>
-            <TextBlock Text=""/>
-
-        </StackPanel>
-        
-        <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
-                    Orientation="Horizontal"
-                    VerticalAlignment="Center"
-                    >
-            <TextBlock Text="Вы выбрали:" Padding="10 0 0 0"/>
-            <TextBlock Text=""/>
-            <TextBlock Text=""/>
-            <TextBlock Text=""/>
+            <TextBlock Text="Вы выбрали:"
+                       Padding="10 0 0 0"
+                       Margin="0 0 25 0"/>
+            <TextBlock Text="{Binding SelectHotelsVM.FinalUserSelectInfo}"
+                       Foreground="{Binding SelectHotelsVM.ColorFinalSelectText}"
+                       Margin="0 0 15 0"/>
 
         </StackPanel>
         <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
-                   Text="Для оформления и оплаты брони, нажмите кнопку Бронь расположенную в верхней правой части экрана."
+                   Text="Для оформления и оплаты брони, выберите пункт меню Заказ номера, кнопка Отмена полностью очистит ваш выбор."
                    TextWrapping="Wrap"
                    Padding="10 10 10 10"
                    HorizontalAlignment="Center"/>

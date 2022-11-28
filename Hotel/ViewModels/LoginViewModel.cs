@@ -81,10 +81,6 @@ namespace Hotel.ViewModels
                             _ = String.IsNullOrEmpty(MiddleName) ? ColorMiddleText = "red" : ColorMiddleText = "black";
                             return;
                         }
-
-
-
-
                     }));
             }
         }

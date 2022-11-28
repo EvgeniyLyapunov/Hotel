@@ -30,9 +30,11 @@
                       VerticalAlignment="Center"
                       FontSize="16"
                       Background="Transparent" FontFamily="Comic Sans MS">
-                    <MenuItem Header="Выбор Отеля" />
+                    <MenuItem Header="Выбор Отеля"
+                              Command="{Binding SelectHotelsVM.SelectVisibleCommand}"/>
 
-                    <MenuItem Header="Заказ номера"/>
+                    <MenuItem Header="Заказ номера"
+                              Command="{Binding SelectHotelsVM.OrderVisibleCommand}"/>
 
                     <MenuItem Header="Распечатать чек"/>
 
@@ -52,6 +54,14 @@
                 <Image x:Name="TitleImg" Source="/StaticFiles/picture.png"
                        Grid.Row="1" Grid.Column="0"
                        Visibility="{Binding IsMainPictureVisible}"/>
+
+                <!--View Выбор отеля-->
+                <usercontrol:SelectHotelsUserControl Grid.Row="1" Grid.Column="0"
+                                              Visibility="{Binding SelectHotelsVM.IsVisible}"/>
+                <!--View Выбор отеля-->
+                <usercontrol:OrderUserControl Grid.Row="1" Grid.Column="0"
+                                              Visibility="{Binding OrderVM.IsOrderVisible}"/>
+
 
                 <!--Титульное название программы-->
                 <Grid Grid.Row="1" Grid.Column="1" Visibility="{Binding IsMainTitleVisible}">

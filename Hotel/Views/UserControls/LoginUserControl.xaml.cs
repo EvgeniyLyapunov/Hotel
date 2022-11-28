@@ -24,7 +24,6 @@ namespace Hotel.Views.UserControls
         public LoginUserControl()
         {
             InitializeComponent();
-            Locator.CurrentMutable.RegisterConstant(this);
         }
     }
 }

@@ -95,9 +95,13 @@
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Services\DataBaseContext.cs" />
+    <Compile Include="Services\DataBaseInitializer.cs" />
+    <Compile Include="Services\ElementsVisible.cs" />
     <Compile Include="Services\RelayCommand.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\OrderViewModel.cs" />
+    <Compile Include="ViewModels\SelectHotelsViewModel.cs" />
     <Compile Include="Views\UserControls\CheckUserControl.xaml.cs">
       <DependentUpon>CheckUserControl.xaml</DependentUpon>
     </Compile>

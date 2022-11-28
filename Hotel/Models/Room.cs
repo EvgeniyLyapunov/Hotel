@@ -13,6 +13,7 @@ namespace Hotel.Models
         public int BedNum { get; set; }
         public int Prise { get; set; }
         public bool IsFree { get; set; }
+        public int HotelId { get; set; }
 
     }
 }
