@@ -5,6 +5,7 @@ using PropertyChanged;
 using Splat;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,8 @@ namespace Hotel.ViewModels
             context= new DataBaseContext();
             IsLoginViewVisible = "Hidden";
             MainWindowVM = Locator.Current.GetService<MainWindowViewModel>();
+
+            UserList = new List<User>();
 
             FirstName = "";
             LastName = "";
@@ -67,10 +70,35 @@ namespace Hotel.ViewModels
                             user.FirstName = FirstName;
                             user.MiddleName = MiddleName;
 
-                            context.Users.Add(user);
-                            context.SaveChanges();
+                            try
+                            {
+                                //UserList = context.Users.ToList();
+
+                                UserList = context.Users.Where(u => u.LastName == LastName &&
+                                                                    u.FirstName == FirstName &&
+                                                                    u.MiddleName == MiddleName).ToList();
+
+                                if (UserList.Count == 0)
+                                {
+                                    context.Users.Add(user);
+                                    context.SaveChanges();
+                                }
+                            }
+                            catch
+                            {
+                                MessageBox.Show("Что то пошло не так с запросом в базу данных.");
+                            }
 
                             MessageBox.Show($"Вы вошли как {user.LastName} {user.FirstName} {user.MiddleName}", "Вход выполнен", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                            MainWindowVM.AuthUser = context.Users.FirstOrDefault(u => u.FirstName == user.FirstName &&
+                                                                                      u.LastName == user.LastName &&
+                                                                                      u.MiddleName == user.MiddleName);
+                            MainWindowVM.LastLine = user.LastName;
+                            MainWindowVM.FirstLine = user.FirstName;
+                            MainWindowVM.MiddleLine = user.MiddleName;
+
+                            user = null;
 
                             LoginViewCloseCommand.Execute(this);
                         } 
@@ -114,6 +142,7 @@ namespace Hotel.ViewModels
         public MainWindowViewModel MainWindowVM { get; set; }
         public LoginUserControl loginUC { get; set; }
 
+        public List<User> UserList { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MiddleName { get; set;}

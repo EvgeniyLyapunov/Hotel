@@ -50,6 +50,13 @@ namespace Hotel.ViewModels
                 return selectVisibleCommand ??
                     (selectVisibleCommand = new RelayCommand(obj =>
                     {
+                        if(String.IsNullOrEmpty(MainWindowVM.AuthUser.MiddleName))
+                        {
+                            MessageBox.Show("Для входа в систему бронирования отелей нужна авторизация.", "Info", MessageBoxButton.OK, MessageBoxImage.Warning);
+                            return;
+                        }
+                        FinalUserSelectInfo = "";
+                        ColorFinalSelectText = "black";
                         foreach (var city in CitysDb)
                         {
                             CitysComboBox.Add(city.CityName);
@@ -77,6 +84,9 @@ namespace Hotel.ViewModels
                         HotelsComboBox.Clear();
                         RoomsComboBox.Clear();
                         FinalUserSelectInfo = "";
+                        selectedCity = null;
+                        selectedHotel = null;
+                        selectedRoom = null;
                         if (IsVisible == "Visible")
                         {
                             ElementsVisible.IsMainScreenHidden();
@@ -106,6 +116,9 @@ namespace Hotel.ViewModels
             {
                 HotelsComboBox.Clear();
                 RoomsComboBox.Clear();
+                selectedCity = null;
+                selectedHotel = null;
+                selectedRoom = null;
 
                 int id = 1;
                 foreach (var city in CitysDb)
@@ -144,6 +157,8 @@ namespace Hotel.ViewModels
             set
             {
                 RoomsComboBox.Clear();
+                selectedHotel = null;
+                selectedRoom = null;
                 int id = 1;
                 foreach (var item in HotelsDb)
                 {
@@ -194,6 +209,7 @@ namespace Hotel.ViewModels
 
             set
             {
+                selectedRoom = null;
                 builder.Clear();
                 int id = 0;
                 foreach(var item in idRoomsDict)
@@ -260,12 +276,31 @@ namespace Hotel.ViewModels
                 return orderVisibleCommand ??
                     (orderVisibleCommand = new RelayCommand(obj =>
                     {
+                        if(selectedCity == null || selectedHotel == null || selectedRoom == null)
+                        {
+                            FinalUserSelectInfo = "Вы не можете перейти в окно заказа номера, не выбрав его.";
+                            ColorFinalSelectText = "red";
+                            return;
+                        }
+
                         var orderVM = Locator.Current.GetService<OrderViewModel>();
+                        orderVM.sitySelected = selectedCity;
+                        orderVM.hotelSelected = selectedHotel;
+                        orderVM.roomSelected = selectedRoom;
                         if (orderVM.IsOrderVisible == "Hidden") 
                         {
                             ElementsVisible.IsMainScreenHidden();
                             orderVM.IsOrderVisible = "Visible";
                         }
+                        selectedCity = null;
+                        selectedHotel = null;
+                        selectedRoom = null;
+                        CitysComboBox.Clear();
+                        HotelsComboBox.Clear();
+                        RoomsComboBox.Clear();
+                        builder.Clear();
+                        FinalUserSelectInfo = "";
+
                     }));
             }
         }

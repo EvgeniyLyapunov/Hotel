@@ -15,6 +15,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
@@ -29,61 +30,69 @@
                     Orientation="Horizontal"
                     VerticalAlignment="Center"
                     Margin="20 0 0 0">
-            <TextBlock Text="Дата:" Margin="0 0 20 0"/>
-            <TextBlock/>
+            <TextBlock Text="ФИО:" Margin="0 0 20 0"/>
+            <TextBlock Text="{Binding CheckVM.UserName}"/>
         </StackPanel>
         <StackPanel Grid.Row="2" 
                     Orientation="Horizontal"
                     VerticalAlignment="Center"
                     Margin="20 0 0 0">
-            <TextBlock Text="Город:" Margin="0 0 20 0"/>
-            <TextBlock/>
+            <TextBlock Text="Дата:" Margin="0 0 20 0"/>
+            <TextBlock Text="{Binding CheckVM.CheckDate}"/>
         </StackPanel>
         <StackPanel Grid.Row="3" 
                     Orientation="Horizontal"
                     VerticalAlignment="Center"
                     Margin="20 0 0 0">
-            <TextBlock Text="Отель:" Margin="0 0 20 0"/>
-            <TextBlock/>
+            <TextBlock Text="Город:" Margin="0 0 20 0"/>
+            <TextBlock Text="{Binding CheckVM.CityName}"/>
         </StackPanel>
         <StackPanel Grid.Row="4" 
                     Orientation="Horizontal"
                     VerticalAlignment="Center"
                     Margin="20 0 0 0">
-            <TextBlock Text="Номер:" Margin="0 0 20 0"/>
-            <TextBlock/>
+            <TextBlock Text="Отель:" Margin="0 0 20 0"/>
+            <TextBlock Text="{Binding CheckVM.HotelName}"/>
         </StackPanel>
         <StackPanel Grid.Row="5" 
                     Orientation="Horizontal"
                     VerticalAlignment="Center"
                     Margin="20 0 0 0">
-            <TextBlock Text="Проживающих:" Margin="0 0 20 0"/>
-            <TextBlock/>
+            <TextBlock Text="Номер:" Margin="0 0 20 0"/>
+            <TextBlock Text="{Binding CheckVM.RoomType}"/>
         </StackPanel>
         <StackPanel Grid.Row="6" 
                     Orientation="Horizontal"
                     VerticalAlignment="Center"
                     Margin="20 0 0 0">
+            <TextBlock Text="Проживающих:" Margin="0 0 20 0"/>
+            <TextBlock Text="{Binding CheckVM.PeopleCount}"/>
+        </StackPanel>
+        <StackPanel Grid.Row="7" 
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    Margin="20 0 0 0">
             <TextBlock Text="Кол-во ночей:" Margin="0 0 20 0"/>
-            <TextBlock/>
+            <TextBlock Text="{Binding CheckVM.NightsCount}"/>
         </StackPanel>
         <StackPanel 
-                    Grid.Row="7" 
+                    Grid.Row="8" 
                     Orientation="Horizontal"
                     VerticalAlignment="Center"
                     Margin="20 0 0 0">
             <TextBlock Text="К оплате:" Margin="0 0 20 0"/>
-            <TextBlock/>
+            <TextBlock Text="{Binding CheckVM.PaymantAmount}"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="8" 
+        <StackPanel Grid.Row="9" 
                     Orientation="Horizontal">
             <Button Content="Закрыть"
                     Width="90" Height="25"
                     FontSize="12"
                     Margin="10 0 20 0"
                     Background="#79d8eb"
-                    Foreground="#fff"/>
+                    Foreground="#fff"
+                    Command="{Binding CheckVM.CloseViewCheckCommand}"/>
             <Image  
                Source="/StaticFiles/oplacheno.png"
                Height="45"

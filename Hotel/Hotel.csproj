@@ -98,6 +98,7 @@
     <Compile Include="Services\DataBaseInitializer.cs" />
     <Compile Include="Services\ElementsVisible.cs" />
     <Compile Include="Services\RelayCommand.cs" />
+    <Compile Include="ViewModels\CheckViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\OrderViewModel.cs" />

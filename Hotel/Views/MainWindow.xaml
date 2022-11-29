@@ -36,7 +36,8 @@
                     <MenuItem Header="Заказ номера"
                               Command="{Binding SelectHotelsVM.OrderVisibleCommand}"/>
 
-                    <MenuItem Header="Распечатать чек"/>
+                    <MenuItem Header="Распечатать чек"
+                              Command="{Binding CheckVM.ViewCheckCommand}"/>
 
                 </Menu>
                 <Menu Grid.Row="0" Grid.Column="1"
@@ -74,38 +75,44 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Grid.Row="1"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       FontSize="24"
-                       Foreground="#fc9f1d">
-                Wpf Client
-                    </TextBlock>
-                    <TextBlock Grid.Row="2"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       FontSize="24"
-                       Foreground="#fc9f1d">
-                of project
-                    </TextBlock>
-                    <TextBlock Grid.Row="3"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       FontSize="36" FontWeight="Bold"
-                       Foreground="#fc9f1d">
-                "Hotel"
-                    </TextBlock>
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="24"
+                               Foreground="#fc9f1d"
+                               Text="{Binding FirstLine}"/>
 
+                    <TextBlock Grid.Row="2"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="24"
+                               Foreground="#fc9f1d"
+                               Text="{Binding MiddleLine}"/>
+
+                    <TextBlock Grid.Row="3"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="24" FontWeight="Bold"
+                               Foreground="#fc9f1d"
+                               Text="{Binding LastLine}"/>
                 </Grid>
 
                 <!--View авторизации (входа)-->
                 <usercontrol:LoginUserControl Grid.Row="1" Grid.Column="1"
                                               Visibility="{Binding LoginVM.IsLoginViewVisible}"/>
 
+                <!--View чека-->
+                <usercontrol:CheckUserControl Grid.Row="1" Grid.Column="1"
+                                              Visibility="{Binding CheckVM.IsCheckVisible}"/>
+
                 <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" 
+                           Padding="20 0 20 0"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
-                           Text="Ваш заказ успешно оплачен. Для получения чека - пункт меню Распечатать чек"
-                           FontSize="18" FontWeight="Bold" Foreground="#79d8eb"/>
+                           TextWrapping="Wrap"
+                           Text="{Binding InfoAboutSucces}"
+                           FontSize="16"
+                           FontWeight="Bold"
+                           Foreground="#79d8eb"/>
 
             </Grid>
         </Border>

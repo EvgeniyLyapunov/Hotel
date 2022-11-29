@@ -48,45 +48,45 @@ namespace Hotel.Services
             context.Hotels.Add(hotel10);
             context.SaveChanges();
 
-            Room room1Hotel1 = new Room() { Type = "Стнадарт двухместный", BedNum = 1, Prise = 2000, HotelId = 1, IsFree = true };
-            Room room2Hotel1 = new Room() { Type = "Стнадарт трёхместный", BedNum = 2, Prise = 3500, HotelId = 1, IsFree = false }; 
-            Room room3Hotel1 = new Room() { Type = "Люкс двухместный", BedNum = 1, Prise = 5500, HotelId = 1, IsFree = true };
+            Room room1Hotel1 = new Room() { Type = "Стнадарт двухместный", BedNum = 2, Prise = 2000, HotelId = 1, IsFree = true };
+            Room room2Hotel1 = new Room() { Type = "Стнадарт трёхместный", BedNum = 3, Prise = 3500, HotelId = 1, IsFree = false }; 
+            Room room3Hotel1 = new Room() { Type = "Люкс двухместный", BedNum = 2, Prise = 5500, HotelId = 1, IsFree = true };
 
-            Room room1Hotel2 = new Room() { Type = "Стнадарт двухместный", BedNum = 1, Prise = 4000, HotelId = 2, IsFree = false };
-            Room room2Hotel2 = new Room() { Type = "Стнадарт трёхместный", BedNum = 2, Prise = 5500, HotelId = 2, IsFree = false }; 
-            Room room3Hotel2 = new Room() { Type = "Люкс двухместный", BedNum = 1, Prise = 8000, HotelId = 2, IsFree = true };
+            Room room1Hotel2 = new Room() { Type = "Стнадарт двухместный", BedNum = 2, Prise = 4000, HotelId = 2, IsFree = false };
+            Room room2Hotel2 = new Room() { Type = "Стнадарт трёхместный", BedNum = 3, Prise = 5500, HotelId = 2, IsFree = false }; 
+            Room room3Hotel2 = new Room() { Type = "Люкс двухместный", BedNum = 2, Prise = 8000, HotelId = 2, IsFree = true };
 
-            Room room1Hotel3 = new Room() { Type = "Стнадарт двухместный", BedNum = 1, Prise = 2000, HotelId = 3, IsFree = true };
-            Room room2Hotel3 = new Room() { Type = "Стнадарт трёхместный", BedNum = 2, Prise = 3500, HotelId = 3, IsFree = true };
-            Room room3Hotel3 = new Room() { Type = "Люкс двухместный", BedNum = 1, Prise = 5500, HotelId = 3, IsFree = true };
+            Room room1Hotel3 = new Room() { Type = "Стнадарт двухместный", BedNum = 2, Prise = 2000, HotelId = 3, IsFree = true };
+            Room room2Hotel3 = new Room() { Type = "Стнадарт трёхместный", BedNum = 3, Prise = 3500, HotelId = 3, IsFree = true };
+            Room room3Hotel3 = new Room() { Type = "Люкс двухместный", BedNum = 2, Prise = 5500, HotelId = 3, IsFree = true };
 
-            Room room1Hotel4 = new Room() { Type = "Стнадарт двухместный", BedNum = 1, Prise = 3000, HotelId = 4, IsFree = true };
-            Room room2Hotel4 = new Room() { Type = "Стнадарт трёхместный", BedNum = 2, Prise = 5000, HotelId = 4, IsFree = false };
-            Room room3Hotel4 = new Room() { Type = "Люкс двухместный", BedNum = 1, Prise = 7500, HotelId = 4, IsFree = false };
+            Room room1Hotel4 = new Room() { Type = "Стнадарт двухместный", BedNum = 2, Prise = 3000, HotelId = 4, IsFree = true };
+            Room room2Hotel4 = new Room() { Type = "Стнадарт трёхместный", BedNum = 3, Prise = 5000, HotelId = 4, IsFree = false };
+            Room room3Hotel4 = new Room() { Type = "Люкс двухместный", BedNum = 2, Prise = 7500, HotelId = 4, IsFree = false };
 
-            Room room1Hotel5 = new Room() { Type = "Стнадарт двухместный", BedNum = 1, Prise = 10000, HotelId = 5, IsFree = true };
-            Room room2Hotel5 = new Room() { Type = "Стнадарт трёхместный", BedNum = 2, Prise = 12000, HotelId = 5, IsFree = true };
-            Room room3Hotel5 = new Room() { Type = "Люкс двухместный", BedNum = 1, Prise = 18000, HotelId = 5, IsFree = true };
+            Room room1Hotel5 = new Room() { Type = "Стнадарт двухместный", BedNum = 2, Prise = 10000, HotelId = 5, IsFree = true };
+            Room room2Hotel5 = new Room() { Type = "Стнадарт трёхместный", BedNum = 3, Prise = 12000, HotelId = 5, IsFree = true };
+            Room room3Hotel5 = new Room() { Type = "Люкс двухместный", BedNum = 2, Prise = 18000, HotelId = 5, IsFree = true };
 
-            Room room1Hotel6 = new Room() { Type = "Стнадарт двухместный", BedNum = 1, Prise = 9000, HotelId = 6, IsFree = false };
-            Room room2Hotel6 = new Room() { Type = "Стнадарт трёхместный", BedNum = 2, Prise = 13500, HotelId = 6, IsFree = false };
-            Room room3Hotel6 = new Room() { Type = "Люкс двухместный", BedNum = 1, Prise = 17800, HotelId = 6, IsFree = true };
+            Room room1Hotel6 = new Room() { Type = "Стнадарт двухместный", BedNum = 2, Prise = 9000, HotelId = 6, IsFree = false };
+            Room room2Hotel6 = new Room() { Type = "Стнадарт трёхместный", BedNum = 3, Prise = 13500, HotelId = 6, IsFree = false };
+            Room room3Hotel6 = new Room() { Type = "Люкс двухместный", BedNum = 2, Prise = 17800, HotelId = 6, IsFree = true };
 
-            Room room1Hotel7 = new Room() { Type = "Стнадарт двухместный", BedNum = 1, Prise = 5000, HotelId = 7, IsFree = true };
-            Room room2Hotel7 = new Room() { Type = "Стнадарт трёхместный", BedNum = 2, Prise = 7500, HotelId = 7, IsFree = false };
-            Room room3Hotel7 = new Room() { Type = "Люкс двухместный", BedNum = 1, Prise = 11000, HotelId = 7, IsFree = false };
+            Room room1Hotel7 = new Room() { Type = "Стнадарт двухместный", BedNum = 2, Prise = 5000, HotelId = 7, IsFree = true };
+            Room room2Hotel7 = new Room() { Type = "Стнадарт трёхместный", BedNum = 3, Prise = 7500, HotelId = 7, IsFree = false };
+            Room room3Hotel7 = new Room() { Type = "Люкс двухместный", BedNum = 2, Prise = 11000, HotelId = 7, IsFree = false };
 
-            Room room1Hotel8 = new Room() { Type = "Стнадарт двухместный", BedNum = 1, Prise = 4000, HotelId = 8, IsFree = true };
-            Room room2Hotel8 = new Room() { Type = "Стнадарт трёхместный", BedNum = 2, Prise = 6500, HotelId = 8, IsFree = true };
-            Room room3Hotel8 = new Room() { Type = "Люкс двухместный", BedNum = 1, Prise = 10500, HotelId = 8, IsFree = true };
+            Room room1Hotel8 = new Room() { Type = "Стнадарт двухместный", BedNum = 2, Prise = 4000, HotelId = 8, IsFree = true };
+            Room room2Hotel8 = new Room() { Type = "Стнадарт трёхместный", BedNum = 3, Prise = 6500, HotelId = 8, IsFree = true };
+            Room room3Hotel8 = new Room() { Type = "Люкс двухместный", BedNum = 2, Prise = 10500, HotelId = 8, IsFree = true };
 
-            Room room1Hotel9 = new Room() { Type = "Стнадарт двухместный", BedNum = 1, Prise = 2000, HotelId = 9, IsFree = false };
-            Room room2Hotel9 = new Room() { Type = "Стнадарт трёхместный", BedNum = 2, Prise = 3500, HotelId = 9, IsFree = false };
-            Room room3Hotel9 = new Room() { Type = "Люкс двухместный", BedNum = 1, Prise = 5500, HotelId = 9, IsFree = true };
+            Room room1Hotel9 = new Room() { Type = "Стнадарт двухместный", BedNum = 2, Prise = 2000, HotelId = 9, IsFree = false };
+            Room room2Hotel9 = new Room() { Type = "Стнадарт трёхместный", BedNum = 3, Prise = 3500, HotelId = 9, IsFree = false };
+            Room room3Hotel9 = new Room() { Type = "Люкс двухместный", BedNum = 2, Prise = 5500, HotelId = 9, IsFree = true };
 
-            Room room1Hotel10 = new Room() { Type = "Стнадарт двухместный", BedNum = 1, Prise = 4000, HotelId = 10, IsFree = true };
-            Room room2Hotel10 = new Room() { Type = "Стнадарт трёхместный", BedNum = 2, Prise = 6500, HotelId = 10, IsFree = true };
-            Room room3Hotel10 = new Room() { Type = "Люкс двухместный", BedNum = 1, Prise = 8000, HotelId = 10, IsFree = true };
+            Room room1Hotel10 = new Room() { Type = "Стнадарт двухместный", BedNum = 2, Prise = 4000, HotelId = 10, IsFree = true };
+            Room room2Hotel10 = new Room() { Type = "Стнадарт трёхместный", BedNum = 3, Prise = 6500, HotelId = 10, IsFree = true };
+            Room room3Hotel10 = new Room() { Type = "Люкс двухместный", BedNum = 2, Prise = 8000, HotelId = 10, IsFree = true };
 
             context.Rooms.Add(room1Hotel1);
             context.Rooms.Add(room2Hotel1);

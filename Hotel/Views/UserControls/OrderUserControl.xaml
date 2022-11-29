@@ -29,79 +29,111 @@
         <StackPanel Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2"
                     Orientation="Horizontal"
                     VerticalAlignment="Center">
-            <TextBlock Text="Сегодня:" Margin="0 0 15 0"/>
-            <TextBlock/>
+            <TextBlock Text="Сегодня:"
+                       Margin="0 0 15 0"
+                       VerticalAlignment="Center"
+                       FontSize="13"/>
+            <TextBlock Text="{Binding OrderVM.CurrentDate}"
+                       TextDecorations="Underline"
+                       VerticalAlignment="Center"
+                       FontSize="15"
+                       Foreground="#79d8eb"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-                    Orientation="Horizontal"
-                    VerticalAlignment="Center"
-                    >
-            <TextBlock Text="Город:"
-                       Padding="15 0 0 5" Margin="0 0 15 0"
-                       FontSize="15"/>
-            <TextBlock Text=""
-                       Padding="15 0 0 5" FontSize="17"/>
-            <TextBlock Text="Отель:"
-                       Padding="15 0 0 5" Margin="0 0 15 0" FontSize="15"/>
-            <TextBlock Text=""
-                       Padding="15 0 0 5" FontSize="17"/>
-            <TextBlock Text="Номер:"
-                       Padding="15 0 0 5" Margin="0 0 15 0" FontSize="15"/>
-            <TextBlock Text=""
-                       Padding="15 0 0 5" FontSize="17"/>
+                    Orientation="Vertical"
+                    VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Город:"
+                       Padding="15 0 0 0"
+                       Margin="0 0 5 0"
+                       VerticalAlignment="Center"
+                       FontSize="13"/>
+                <TextBlock Text="{Binding OrderVM.sitySelected.CityName}"
+                       VerticalAlignment="Center"
+                       Foreground="Orange"
+                       FontSize="17"/>
+                <TextBlock Text="Отель:"
+                       Padding="15 0 0 0"
+                       Margin="0 0 5 0"
+                       VerticalAlignment="Center"
+                       FontSize="13"/>
+                <TextBlock Text="{Binding OrderVM.hotelSelected.HotelName}"
+                       VerticalAlignment="Center"
+                       Foreground="Orange"
+                       FontSize="17"/>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Номер:"
+                       Padding="15 0 0 0"
+                       Margin="0 0 5 0"
+                       VerticalAlignment="Center"
+                       FontSize="13"/>
+                <TextBlock Text="{Binding OrderVM.roomSelected.Type}"
+                       VerticalAlignment="Center"
+                       Foreground="Orange"
+                       FontSize="17"/>
+            </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">
             <TextBlock Width="200"
                        Margin="0 0 0 10"
                        FontSize="12"
                        TextAlignment="Center"
-                       VerticalAlignment="Center">
+                       VerticalAlignment="Center"
+                       Foreground="{Binding OrderVM.InputNightsColorText}">
                 Количество ночей
             </TextBlock>
             <TextBox Name="NightsTextBox"
                      Width="200"
                      Padding="2"
-                     FontSize="16"/>
+                     FontSize="16"
+                     Text="{Binding OrderVM.InputNights, Mode=TwoWay}"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Center">
             <TextBlock Width="200"
                        Margin="0 0 0 10"
                        FontSize="12"
                        TextAlignment="Center"
-                       VerticalAlignment="Center">
+                       VerticalAlignment="Center"
+                       Foreground="{Binding OrderVM.InputPeoplesColorText}">
                 Количество въезжающих:
             </TextBlock>
             <TextBox Name="PeoplesTextBox"
                      Width="200"
                      Padding="2"
-                     FontSize="16"/>
+                     FontSize="16"
+                     Text="{Binding OrderVM.InputPeoples, Mode=TwoWay}"/>
         </StackPanel>
         <Button Grid.Row="3" Grid.Column="0"
                 Width="140"
                 Height="25"
-                Padding="5 0 5 0">
+                Padding="5 0 5 0"
+                Command="{Binding OrderVM.CostCalculationCommand}">
             Рассчитать стоимость
         </Button>
         <TextBlock Grid.Row="3" Grid.Column="1"
-                   Text=""
+                   Text="{Binding OrderVM.theTotalCostInfo}"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
-                   FontSize="24"
+                   FontSize="20"
                    Foreground="#fc9f1d"/>
         <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
                     Orientation="Horizontal"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center">
-            <Button Content="Назад"
-                     Width="120"
-                     Height="25"
+            <Button Content="Отмена"
+                    Width="120"
+                    Height="25"
                     Margin="0 0 50 0"
-                     Padding="5 0 5 0"/>
+                    Padding="5 0 5 0"
+                    Command="{Binding OrderVM.CanselCommand}"/>
             <Button Content="Оплатить"
-                     Width="120"
-                     Height="25"
-                     Padding="5 0 5 0"/>
+                    Width="120"
+                    Height="25"
+                    Padding="5 0 5 0"
+                    Command="{Binding OrderVM.PaymantCommand}"/>
         </StackPanel>
     </Grid>
     
